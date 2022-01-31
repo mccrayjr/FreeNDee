@@ -1,12 +1,22 @@
-[Deployed](http://freendbeyond.herokuapp.com/)
-Refactoring list:
--Change to using class objects for characters and monsters (methods for changing status/health/initiative)
--Refactor reducer to deeply clone objects
--Hook up to [API](https://www.dnd5eapi.co/) for monsters 
--Create Modal for status/health [stats icons](https://drive.google.com/drive/folders/1p8PTqBHkgSrKVqqOyI2_kFcPmbgLcX72)
--Add Reset feature
--DnD music Integration(?) tbd
--Styling for header/Background/Footer (convince someone to do graphic design? Fiver?)
+# [Deployed](http://freendbeyond.herokuapp.com/)
+
+### Refactoring list:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Remove dummy data
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Add Reset feature
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Change to using class objects for characters and monsters (methods for changing status/health/initiative)
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Refactor reducer to deeply clone objects
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Hook up to [API](https://www.dnd5eapi.co/) for monsters 
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Create Modal for status/health [stats icons](https://drive.google.com/drive/folders/1p8PTqBHkgSrKVqqOyI2_kFcPmbgLcX72)
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-DnD music Integration(?) tbd
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Styling for header/Background/Footer (convince someone to do graphic design? Fiver?)
 
 
 # Getting Started with Create React App
