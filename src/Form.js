@@ -10,11 +10,27 @@ export function Form() {
   const [name, setName] = useState('');
   const [initiative, setInitiative] = useState(0);
 
+
   //This is a helper function to add our characters from the form into our state (characters array)
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    alert('Things are a-happening!');
+  const handleSubmitCharacter = () => {
+    alert('Characters are a-happening!');
     const character =  new Character(name, initiative);
+    dispatch({ type: 'ADD_CHAR', value: character });
+    console.log(charState);
+    setName('');
+    setInitiative(0);
+  };
+
+  //@todo Add Error handling with try/catch
+  const handleSubmitMonster = async () => {
+    alert('Monsters are a-happening!');
+
+    const monsterInfo = await fetch(`https://www.dnd5eapi.co/api/monsters/${name.toLocaleLowerCase().split(' ').join('-')}/`);
+    const monsterInfoJson = monsterInfo.json()
+
+    console.log(monsterInfoJson)
+
+    const character =  new Monster(name, initiative, 0, [], monsterInfoJson);
     dispatch({ type: 'ADD_CHAR', value: character });
     console.log(charState);
     setName('');
@@ -30,7 +46,7 @@ export function Form() {
   return (
     <div class='columns is-vcentered'>
       <div class='column is-half is-offset-one-quarter'>
-        <form onSubmit={handleSubmit}>
+        <div>
           <label>
             <input
               class='input'
@@ -47,9 +63,16 @@ export function Form() {
             />
           </label>
           <div class='column is-4 is-offset-5'>
-            <input class='button is-primary' type='submit' value='Submit' />
-          </div>
-        </form>
+          <button class='button is-primary' onClick={() => {handleSubmitCharacter()}}>
+            Character
+          </button>
+        </div>
+          <div class='column is-4 is-offset-5'>
+          <button class='button is-primary' onClick={() => {handleSubmitMonster()}}>
+            Monster
+          </button>
+        </div>
+        </div>
         <div class='column is-4 is-offset-5'>
           <button class='button is-danger' onClick={handleTurn}>
             Turn
