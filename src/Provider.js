@@ -55,7 +55,7 @@ const turnChanger = (arr) => {
   let elem = arr[curr];
 
   if (elem.isTurn) {
-    console.log("should happen if first element is true")
+    //console.log("should happen if first element is true")
     let nextElem = arr[next];
     elem.isTurn = false;
     nextElem.isTurn = true;
@@ -67,7 +67,7 @@ const turnChanger = (arr) => {
     let finalElem = arr[final];
     if (nextElem) {
       if (nextElem.isTurn) {
-        console.log("from line 69")
+        //console.log("from line 69")
         nextElem.isTurn = false;
         finalElem ? (finalElem.isTurn = true) : (arr[0].isTurn = true);
         return arr;
@@ -75,7 +75,7 @@ const turnChanger = (arr) => {
     }
     curr++;
     if (curr > arr.length - 1) {
-      console.log("should restart order")
+      //console.log("should restart order")
       arr[0].isTurn = true;
       return arr;
     }
