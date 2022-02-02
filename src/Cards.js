@@ -7,6 +7,12 @@ export const Cards = () => {
   const charState = useContext(charContext);
   //we can access our array of characters on the state property of charContext vvv
   const characters = charState.state;
+  const { dispatch } = charState;
+
+  const handleDelete = (character) => {
+    console.log("in handle delete", character)
+    dispatch({type: 'REMOVE_CHARACTER', value: character})
+  }
 
   //may use this for the modal but idk
   const [open, setOpen] = React.useState(false);
@@ -18,6 +24,7 @@ export const Cards = () => {
     <div>
       {characters ? (
         <div class='columns'>
+
           {characters.map((character, i) => (
             <div key={i}>
               {!character.isTurn ? (
@@ -37,6 +44,9 @@ export const Cards = () => {
                           ></img>
                         </figure>
                       </div>
+                      <IconButton aria-label="delete" size="small" onClick={() => handleDelete(character)}>
+                        <DeleteIcon fontSize="inherit" />
+                      </IconButton>
                     </article>
                     <br></br>
                     <button

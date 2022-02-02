@@ -14,7 +14,7 @@ const { Provider } = charContext;
 //Action Types allows us to pass an object that carries an action type and a data that we need to use to modify the state or initial state ex {action: 'ADD_CHAR' value: {name: Finn, initiative: 15}}
 const ADD_CHAR = 'ADD_CHAR';
 const CHANGE_TURN = 'CHANGE_TURN';
-const REMOVE_CHARACTER = "REMOVE_CHARACTER";
+const REMOVE_CHARACTER = 'REMOVE_CHARACTER';
 
 //FUNCTION FOR HANDLING
 const turnChanger = (arr) => {
