@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { charContext } from './Provider';
+import { Character, Monster } from './Classes';
 
 export function Form() {
   //useContext gives us acess to the state that we passed down through Provider
@@ -13,12 +14,7 @@ export function Form() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     alert('Things are a-happening!');
-    const character = {
-      name: name,
-      initiative: initiative,
-      isTurn: false,
-      status: null,
-    };
+    const character =  new Character(name, initiative);
     dispatch({ type: 'ADD_CHAR', value: character });
     console.log(charState);
     setName('');

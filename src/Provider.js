@@ -2,7 +2,7 @@ import React from 'react';
 
 //Our initial state creates an array that will hold all of our "character" objects
 const initialState = [
-  { name: 'John', initiative: '3', isTurn: false },
+  { name: 'John', initiative: '5', isTurn: false },
   { name: 'Finn', initiative: '2', isTurn: false },
   { name: 'Riley', initiative: '1', isTurn: false },
 ];
@@ -14,6 +14,7 @@ const { Provider } = charContext;
 //Action Types allows us to pass an object that carries an action type and a data that we need to use to modify the state or initial state ex {action: 'ADD_CHAR' value: {name: Finn, initiative: 15}}
 const ADD_CHAR = 'ADD_CHAR';
 const CHANGE_TURN = 'CHANGE_TURN';
+const REMOVE_CHARACTER = "REMOVE_CHARACTER";
 
 //FUNCTION FOR HANDLING
 const turnChanger = (arr) => {
@@ -104,6 +105,8 @@ const reducer = (state = initialState, action) => {
         return { ...a };
       });
       return turnChanger(stateCopy);
+    case REMOVE_CHARACTER:
+      return state.filter(character => (character.name !== action.value.name))
     default:
       console.log('something went wrong');
       return state;
