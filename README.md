@@ -1,22 +1,32 @@
 # [Deployed](http://freendbeyond.herokuapp.com/)
 
-### Refactoring list:
+### Refactoring/ToDo list:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Remove dummy data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xRemove dummy data
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Add Reset feature
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xAdd Delete feature
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Change to using class objects for characters and monsters (methods for changing status/health/initiative)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xChange to using class objects for characters and monsters (methods for changing status/health/initiative)
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Refactor reducer to deeply clone objects
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xRefactor reducer to deeply clone objects
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Hook up to [API](https://www.dnd5eapi.co/) for monsters 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xHook up to [API](https://www.dnd5eapi.co/) for monsters 
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Create Modal for status/health [stats icons](https://drive.google.com/drive/folders/1p8PTqBHkgSrKVqqOyI2_kFcPmbgLcX72)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Create Modal(s) for status/health [stats icons](https://drive.google.com/drive/folders/1p8PTqBHkgSrKVqqOyI2_kFcPmbgLcX72)
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Quick look up for spells via api + modal
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Add Reset Feature to change all remaining characters initiative (new Encounter Modal)
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Styling for header/Background/Footer
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-DnD music Integration(?) tbd
+  
+  
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Styling for header/Background/Footer (convince someone to do graphic design? Fiver?)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Integrate Dice Roller
+  
+  
 
 
 # Getting Started with Create React App
