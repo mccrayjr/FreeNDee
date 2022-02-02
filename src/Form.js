@@ -13,7 +13,7 @@ export function Form() {
 
   //This is a helper function to add our characters from the form into our state (characters array)
   const handleSubmitCharacter = () => {
-    alert('Characters are a-happening!');
+    //alert('Characters are a-happening!');
     const character =  new Character(name, initiative);
     dispatch({ type: 'ADD_CHAR', value: character });
     console.log(charState);
@@ -23,7 +23,7 @@ export function Form() {
 
   //@todo Add Error handling with try/catch
   const handleSubmitMonster = async () => {
-    alert('Monsters are a-happening!');
+    //alert('Monsters are a-happening!');
 
     const monsterInfo = await fetch(`https://www.dnd5eapi.co/api/monsters/${name.toLocaleLowerCase().split(' ').join('-')}/`);
     const monsterInfoJson = monsterInfo.json()

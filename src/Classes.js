@@ -6,6 +6,7 @@ export class Character {
     this.health = health;
     //max health???
     this.status = status;
+    this.isTurn = false;
   }
 
   //Take Damage
