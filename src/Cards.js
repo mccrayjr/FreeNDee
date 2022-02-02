@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { charContext } from './Provider';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const Cards = () => {
   const charState = useContext(charContext);
@@ -52,6 +54,7 @@ export const Cards = () => {
                     style={{ width: '200px', background: '#FF33CA' }}
                   >
                     <article class='media'>
+                      <div><button class="delete is-small"></button></div>
                       <div class='media-content'>
                         <p key={i} class='bd-notification is-primary'>
                           {character.name} {character.initiative}
