@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { charContext } from './Provider';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+
 
 export const Cards = () => {
   const charState = useContext(charContext);
@@ -23,7 +22,7 @@ export const Cards = () => {
   return (
     <div>
       {characters ? (
-        <div class='columns'>
+        <div class='columns is-multiline'>
 
           {characters.map((character, i) => (
             <div key={i}>

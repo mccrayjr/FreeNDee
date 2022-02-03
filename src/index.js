@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { StateProvider } from './Provider';
 import { Form } from './Form';
 import { Cards } from './Cards';
+import { CharacterBox } from './CharacterBox';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider>
+      <CharacterBox />
       <Form />
       <Cards />
     </StateProvider>
