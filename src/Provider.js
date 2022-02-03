@@ -1,11 +1,9 @@
 import React from 'react';
+import cloneDeep from 'lodash/cloneDeep'
+
 
 //Our initial state creates an array that will hold all of our "character" objects
-const initialState = [
-  { name: 'John', initiative: '5', isTurn: false },
-  { name: 'Finn', initiative: '2', isTurn: false },
-  { name: 'Riley', initiative: '1', isTurn: false },
-];
+const initialState = [];
 
 //create context allows us to use the Provider component to wrap around our children components and pass data on line 30
 const charContext = React.createContext(initialState);
@@ -57,6 +55,7 @@ const turnChanger = (arr) => {
   let elem = arr[curr];
 
   if (elem.isTurn) {
+    //console.log("should happen if first element is true")
     let nextElem = arr[next];
     elem.isTurn = false;
     nextElem.isTurn = true;
@@ -68,6 +67,7 @@ const turnChanger = (arr) => {
     let finalElem = arr[final];
     if (nextElem) {
       if (nextElem.isTurn) {
+        //console.log("from line 69")
         nextElem.isTurn = false;
         finalElem ? (finalElem.isTurn = true) : (arr[0].isTurn = true);
         return arr;
@@ -75,6 +75,7 @@ const turnChanger = (arr) => {
     }
     curr++;
     if (curr > arr.length - 1) {
+      //console.log("should restart order")
       arr[0].isTurn = true;
       return arr;
     }
@@ -92,18 +93,16 @@ const reducer = (state = initialState, action) => {
     case ADD_CHAR:
       console.log('adding character');
       //This uses the "..." spread operator to insert the current contents of state and add our new value to the array
-      let allChars = [...state, action.value];
+      let newState = cloneDeep(state)
+      newState.push(action.value)
       //This function vvv makes a copy of the array and sorts them in descending order based on initiative
-      let sortedChars = allChars
-        .slice()
-        .sort((a, b) => b.initiative - a.initiative);
-      return sortedChars;
+      const value = newState.sort((a, b) => b.initiative - a.initiative);
+
+      return value
     case CHANGE_TURN:
       //console.log('Changing Turn in reducer');
       //this bitch right here vvvv was "statecopy = [...state] which WILL NOT work on an array of objects, and probably (?) will not work for monsters having nested objects
-      const stateCopy = state.map((a) => {
-        return { ...a };
-      });
+      const stateCopy = cloneDeep(state);
       return turnChanger(stateCopy);
     case REMOVE_CHARACTER:
       return state.filter(character => (character.name !== action.value.name))

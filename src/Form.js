@@ -13,7 +13,7 @@ export function Form() {
 
   //This is a helper function to add our characters from the form into our state (characters array)
   const handleSubmitCharacter = () => {
-    alert('Characters are a-happening!');
+    //alert('Characters are a-happening!');
     const character =  new Character(name, initiative);
     dispatch({ type: 'ADD_CHAR', value: character });
     console.log(charState);
@@ -23,14 +23,14 @@ export function Form() {
 
   //@todo Add Error handling with try/catch
   const handleSubmitMonster = async () => {
-    alert('Monsters are a-happening!');
+    //alert('Monsters are a-happening!');
 
     const monsterInfo = await fetch(`https://www.dnd5eapi.co/api/monsters/${name.toLocaleLowerCase().split(' ').join('-')}/`);
-    const monsterInfoJson = monsterInfo.json()
+    const monsterInfoJson = await monsterInfo.json()
 
     console.log(monsterInfoJson)
 
-    const character =  new Monster(name, initiative, 0, [], monsterInfoJson);
+    const character = await  new Monster(name, initiative, 0, [], monsterInfoJson);
     dispatch({ type: 'ADD_CHAR', value: character });
     console.log(charState);
     setName('');
@@ -45,7 +45,7 @@ export function Form() {
 
   return (
     <div class='columns is-vcentered'>
-      <div class='column is-half is-offset-one-quarter'>
+      <div class='column is-one-third is-offset-one-third'>
         <div>
           <label>
             <input
@@ -69,13 +69,13 @@ export function Form() {
         </div>
           <div class='column is-4 is-offset-5'>
           <button class='button is-primary' onClick={() => {handleSubmitMonster()}}>
-            Monster
+             Monster
           </button>
         </div>
         </div>
         <div class='column is-4 is-offset-5'>
           <button class='button is-danger' onClick={handleTurn}>
-            Turn
+              Turn
           </button>
         </div>
       </div>

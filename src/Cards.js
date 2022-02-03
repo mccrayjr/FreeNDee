@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { charContext } from './Provider';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+
 
 export const Cards = () => {
   const charState = useContext(charContext);
@@ -23,7 +22,7 @@ export const Cards = () => {
   return (
     <div>
       {characters ? (
-        <div class='columns'>
+        <div class='columns is-multiline'>
 
           {characters.map((character, i) => (
             <div key={i}>
@@ -36,7 +35,7 @@ export const Cards = () => {
                           {character.name} {character.initiative}
                         </p>
                       </div>
-                      <div class='media-right'>
+                      <div class='media-left'>
                         <figure class='image is-32x32'>
                           <img
                             src='https://bulma.io/images/placeholders/128x128.png'
@@ -44,9 +43,7 @@ export const Cards = () => {
                           ></img>
                         </figure>
                       </div>
-                      <IconButton aria-label="delete" size="small" onClick={() => handleDelete(character)}>
-                        <DeleteIcon fontSize="inherit" />
-                      </IconButton>
+                      <div><button class="delete is-small right" onClick={() => handleDelete(character)}></button></div>
                     </article>
                     <br></br>
                     <button
@@ -64,13 +61,12 @@ export const Cards = () => {
                     style={{ width: '200px', background: '#FF33CA' }}
                   >
                     <article class='media'>
-                      <div><button class="delete is-small"></button></div>
                       <div class='media-content'>
                         <p key={i} class='bd-notification is-primary'>
                           {character.name} {character.initiative}
                         </p>
                       </div>
-                      <div class='media-right'>
+                      <div class='media-left'>
                         <figure class='image is-32x32'>
                           <img
                             src='https://bulma.io/images/placeholders/128x128.png'
@@ -78,6 +74,7 @@ export const Cards = () => {
                           ></img>
                         </figure>
                       </div>
+                      <div><button class="delete is-small right" onClick={() => handleDelete(character)}></button></div>
                     </article>
                     <br></br>
                     <button
