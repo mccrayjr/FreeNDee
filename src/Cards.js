@@ -14,9 +14,9 @@ export const Cards = () => {
   }
 
   //may use this for the modal but idk
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [open, setOpen] = React.useState("");
+  const handleOpen = () => setOpen(" is-active");
+  const handleClose = () => setOpen("");
 
   // in our return we have conditional logic that says: if Characterss exists iterate over the array and render boxes w/ each character's info; if Characters does NOT exist render and empty div
   return (
@@ -52,6 +52,22 @@ export const Cards = () => {
                     >
                       Status
                     </button>
+                    <div class={`modal${open}`}>
+                      <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">Modal title</p>
+                            <button class="delete" onClick={handleClose} aria-label="close"></button>
+                          </header>
+                          <section class="modal-card-body">
+                            {`Charcter: ${character.name}`}
+                          </section>
+                          <footer class="modal-card-foot">
+                            <button class="button is-success">Save changes</button>
+                            <button class="button">Cancel</button>
+                          </footer>
+                        </div>
+                        </div>
                   </div>
                 </div>
               ) : (
