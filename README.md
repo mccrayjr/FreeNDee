@@ -12,7 +12,9 @@
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xHook up to [API](https://www.dnd5eapi.co/) for monsters 
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Create Modal(s) for status/health [stats icons](https://drive.google.com/drive/folders/1p8PTqBHkgSrKVqqOyI2_kFcPmbgLcX72)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xCreate Modal(s) for status/health [stats icons](https://drive.google.com/drive/folders/1p8PTqBHkgSrKVqqOyI2_kFcPmbgLcX72)
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Bugs: 1.) Error Handling for monster data 2.) Turns for 1 character 3.) Populate status modal w/ correct info
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Quick look up for spells via api + modal
 
