@@ -1,5 +1,9 @@
 # [Deployed](http://freendbeyond.herokuapp.com/)
 
+Hello! I'm glad you're here. I'm working on this enounter tracker to hopefully make my/other's DM/s lives a little easier.
+I only really work on this thing for fun in my free time, so no eta on when it'll be "done" but below are the things that I'm hoping for.
+You're welcome to make a pull request if you want to join in!
+
 ### Refactoring/ToDo list:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xRemove dummy data
